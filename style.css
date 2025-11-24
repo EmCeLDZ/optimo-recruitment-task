@@ -1,0 +1,233 @@
+/**
+ * @author Michał Ciaś
+ * @file style.css
+ * @description Stylesheet for a responsive layout task for Optimo development.
+ * @version 1.0.0
+ * 
+ * Architecture: Mobile First.
+ * Breakpoints:
+ * - Mobile (default): < 583px
+ * - Tablet: 583px - 900px
+ * - Desktop: > 900px
+ */
+
+/* ===================================================================
+   1. RESET AND GLOBAL STYLES
+   =================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Key requirement: disable scrolling */
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===================================================================
+   2. COMPONENT BASE STYLES
+   =================================================================== */
+
+/* Header (Top Bar) */
+.top-bar {
+    height: 50px;
+    width: 100%;
+    background-color: #8B8035; /* Olive */
+    border-bottom: 3px solid #000;
+    flex-shrink: 0; /* Prevents the bar from shrinking */
+}
+
+/* Main Container */
+.main-container {
+    flex-grow: 1;
+    background-color: #007015; /* Dark green */
+    padding: 40px;
+}
+
+/* --- Graphic Elements --- */
+
+/* Section: Diamonds */
+.diamond-group {
+    position: relative;
+    width: 220px;
+    height: 220px;
+}
+
+.diamond {
+    width: 120px;
+    height: 120px;
+    background-color: #FF0000;
+    border: 3px solid #000;
+    position: absolute;
+    transform: rotate(45deg);
+    transition: transform 0.5s ease-in-out;
+}
+.diamond:nth-child(1) { bottom: 0; left: 0; }
+.diamond:nth-child(2) { top: 0; right: 0; }
+
+/* Section: Bars and Circle */
+.shapes-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.bars-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bar {
+    width: 100px;
+    height: 20px;
+    background-color: #3333CC;
+    border: 3px solid #00008B;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #008080;
+    border: 3px solid #000;
+    border-radius: 50%;
+}
+
+/* Section: ABC Box */
+.abc-box {
+    border: 3px solid #000;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* ===================================================================
+   3. DEFAULT LAYOUT (MOBILE FIRST)
+   =================================================================== */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontal centering */
+    justify-content: space-around; 
+}
+
+.abc-box {
+    background-color: #2201b5; /* Blue */
+    width: 180px;
+    height: 40vh;
+}
+
+.section-shapes {
+    margin-top: 10px; 
+}
+
+/* ===================================================================
+   4. RESPONSIVE LAYOUTS (MEDIA QUERIES)
+   =================================================================== */
+
+/* 
+   -------------------------------------------------------------------
+   TABLET (from 583px to 900px)
+   -------------------------------------------------------------------
+*/
+@media (min-width: 583px) and (max-width: 900px) {
+    /* Override layout: from flexbox to grid */
+    .main-container {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        gap: 50px 80px;
+        align-items: stretch;
+    }
+
+    .section-diamonds { grid-area: 1 / 1; }
+    .section-shapes   { grid-area: 2 / 1; }
+    .section-abc      { grid-area: 1 / 2 / 3 / 2; }
+    
+    /* Override box style: from purple to red */
+    .abc-box {
+        background-color: #D32F2F; /* Red */
+        width: 200px;
+        height: 100%;
+    }
+
+    .diamond-group {
+    width: 180px;
+    height: 180px;
+    }
+    .diamond {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* 
+   -------------------------------------------------------------------
+   DESKTOP (above 900px)
+   -------------------------------------------------------------------
+*/
+@media (min-width: 901px) {
+    /* Override layout: from grid to row flexbox */
+    .main-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    /* Positioning of the bars and circle group */
+    .section-shapes {
+        margin-left: 500px;
+        margin-top: 100px;
+    }
+    
+    /* `margin-left: auto` pushes this element to the right,
+       creating an empty space in the middle. */
+    .section-abc {
+        margin-left: auto;
+    }
+
+    /* Override box style: from red to white */
+    .abc-box {
+        background-color: #FFFFFF; /* White */
+        width: 250px;
+        height: 600px;
+    }
+    .diamond-group {
+    width: 220px;
+    height: 220px;
+    }
+    .diamond {
+        width: 120px;
+        height: 120px;
+    }   
+}
+
+/* ===================================================================
+   5. ANIMATIONS
+   =================================================================== */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+/* Hover animation for bars, circle, and ABC box */
+.bar:hover,
+.circle:hover,
+.abc-box:hover {
+    animation: shake 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover animation for diamonds */
+.diamond-group:hover .diamond {
+    transform: rotate(225deg);
+    cursor: pointer;
+}
