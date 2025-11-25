@@ -27,7 +27,11 @@ This repository contains the solution for the recruitment test, divided into two
 *   **Responsiveness:** Layout adapts seamlessly to different screen resolutions.
 *   **Animations:** CSS animations added for better user experience and visual polish.
 
-### How to view:
+### 🌐 Live Preview (GitHub Pages)
+You can view the live project immediately without cloning the repository:
+👉 **[Click here to open the Website](https://emceldz.github.io/optimo-recruitment-task/)**
+
+### How to view locally:
 1.  Clone the repository.
 2.  Open `index.html` in any modern web browser.
 3.  Resize the browser window to observe layout changes.
