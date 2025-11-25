@@ -1,8 +1,25 @@
 PROJECT: Room Renovation Plan
-TIMELINE: 3 Days
+TIMELINE: 4 Days
 
 **DAY 1: Preparation & Procurement**
 
+1.0 Clear out: Move all furniture to the hallway. Remove switch covers and socket frames.
+1.1 Protect: Cover the floor with heavy-duty cardboard (foil tears too easily). Tape skirting boards carefully using high-quality painter’s tape.
+
 **DAY 2: Surface Treatment & Painting**
 
+2.0 Repair: Fill old drill holes and cracks with spackle. Sand smooth once dry.
+2.1 Paint Job: Apply primer first. Follow with two coats of the main color
+Tip: Remove the masking tape while the second coat is still slightly wet to ensure sharp edges.
+
 **DAY 3: Assembly & Finalization**
+
+3.0 Furniture: Assemble the new desk and shelves.
+3.1 Layout: Position the desk perpendicular to the window to avoid screen glare.
+3.2 Cable Management: Route all cables (PC, monitors, power strips) into organizers before pushing the desk against the wall.
+
+**DAY 4: Final Setup**
+
+4.0 Lighting: Install the ceiling lamp and desk lighting.
+4.1 Clean: Vacuum construction dust thoroughly before bringing electronics back in.
+4.2 Decor: Mount shelves and posters.
